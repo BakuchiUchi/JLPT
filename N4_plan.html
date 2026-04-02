@@ -1,0 +1,1615 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2868
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset134 PingFangSC-Regular;\f2\fnil\fcharset0 AppleColorEmoji;
+\f3\fnil\fcharset128 HiraginoSans-W3;\f4\fnil\fcharset0 STIXTwoMath-Regular;\f5\fnil\fcharset0 LucidaGrande;
+}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 <!DOCTYPE html>\
+<html lang="ja">\
+<head>\
+    <meta charset="UTF-8">\
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <title>JLPT N4 Master Plan - Aryan</title>\
+    <style>\
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Outfit:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');\
+\
+\
+        :root \{\
+            --bg-color: #FAFAF7;\
+            --primary: #C0392B;\
+            --secondary: #1E2D5A;\
+            --gold: #D4A017;\
+            --text-main: #1A1410;\
+            --text-sec: #6B6560;\
+            --phase1: #FFF3E0; --phase1-border: #E65100;\
+            --phase2: #E8EAF6; --phase2-border: #283593;\
+            --phase3: #E8F5E9; --phase3-border: #1B5E20;\
+            --phase4: #FCE4EC; --phase4-border: #880E4F;\
+            --weekend-bg: #F3E5F5; --weekend-border: #4A148C;\
+            --rest-bg: #F5F5F5; --rest-border: #9E9E9E;\
+        \}\
+\
+        @page \{\
+            size: A4;\
+            margin: 15mm 18mm;\
+        \}\
+\
+        body \{\
+            background-color: var(--bg-color);\
+            color: var(--text-main);\
+            font-family: 'Outfit', sans-serif;\
+            margin: 0;\
+            padding: 0;\
+            line-height: 1.4;\
+        \}\
+\
+        h1, h2, h3, .jp-font \{ font-family: 'Noto Serif JP', serif; \}\
+        .mono \{ font-family: 'DM Mono', monospace; \}\
+\
+        .container \{\
+            max-width: 780px;\
+            margin: 0 auto;\
+        \}\
+\
+        /* --- COVER PAGE --- */\
+        .cover-page \{\
+            height: 260mm;\
+            background-color: #1A1410;\
+            display: flex;\
+            flex-direction: column;\
+            justify-content: center;\
+            align-items: center;\
+            text-align: center;\
+            color: white;\
+            page-break-after: always;\
+        \}\
+\
+        .cover-kanji \{\
+            font-size: 120px;\
+            color: var(--primary);\
+            margin-bottom: 20px;\
+        \}\
+\
+        .cover-title \{\
+            font-size: 28px;\
+            letter-spacing: 0.3em;\
+            color: var(--gold);\
+            margin-bottom: 10px;\
+        \}\
+\
+        .cover-subtitle \{\
+            font-size: 16px;\
+            font-weight: 300;\
+            margin-bottom: 30px;\
+        \}\
+\
+        .gold-rule \{\
+            width: 80px;\
+            height: 2px;\
+            background-color: var(--gold);\
+            margin-bottom: 40px;\
+        \}\
+\
+        .resource-list \{\
+            font-size: 13px;\
+            max-width: 400px;\
+            text-align: left;\
+            line-height: 1.8;\
+        \}\
+\
+        .student-footer \{\
+            position: absolute;\
+            bottom: 40px;\
+            color: var(--text-sec);\
+            font-size: 11px;\
+        \}\
+\
+        /* --- OVERVIEW PAGE --- */\
+        .overview-page \{\
+            page-break-after: always;\
+            padding-top: 20px;\
+        \}\
+\
+        .section-title \{\
+            color: var(--primary);\
+            font-size: 22px;\
+            border-bottom: 2px solid var(--primary);\
+            padding-bottom: 5px;\
+            margin-bottom: 20px;\
+        \}\
+\
+        .phase-grid \{\
+            display: grid;\
+            grid-template-columns: 1fr 1fr;\
+            gap: 15px;\
+            margin-bottom: 30px;\
+        \}\
+\
+        .phase-box \{\
+            padding: 15px;\
+            border-radius: 8px;\
+            border-left: 5px solid;\
+        \}\
+\
+        .phase-box h3 \{ margin: 0 0 5px 0; font-size: 16px; \}\
+        .phase-box p \{ margin: 0; font-size: 12px; \}\
+\
+        .rhythm-row \{\
+            display: grid;\
+            grid-template-columns: repeat(7, 1fr);\
+            gap: 5px;\
+            margin: 20px 0;\
+        \}\
+\
+        .day-box \{\
+            text-align: center;\
+            padding: 10px 5px;\
+            background: white;\
+            border: 1px solid #ddd;\
+            font-size: 11px;\
+        \}\
+\
+        .day-box.weekend \{ background: var(--weekend-bg); border-color: var(--weekend-border); \}\
+\
+        .timeline \{\
+            display: flex;\
+            justify-content: space-between;\
+            align-items: center;\
+            background: #eee;\
+            height: 4px;\
+            margin: 40px 20px;\
+            position: relative;\
+        \}\
+\
+        .marker \{\
+            position: relative;\
+            width: 12px;\
+            height: 12px;\
+            background: var(--primary);\
+            border-radius: 50%;\
+        \}\
+\
+        .marker::after \{\
+            content: attr(data-label);\
+            position: absolute;\
+            top: 15px;\
+            left: -30px;\
+            width: 80px;\
+            font-size: 10px;\
+            text-align: center;\
+        \}\
+\
+        .grammar-grid \{\
+            display: grid;\
+            grid-template-columns: repeat(4, 1fr);\
+            gap: 8px;\
+            font-size: 11px;\
+        \}\
+\
+        .check-item \{ display: flex; align-items: center; \}\
+        .check-item input \{ margin-right: 5px; \}\
+\
+        /* --- WEEKLY LAYOUT --- */\
+        .week-block \{ page-break-before: always; \}\
+\
+        .week-header \{\
+            height: 60px;\
+            display: flex;\
+            justify-content: space-between;\
+            align-items: center;\
+            padding: 0 20px;\
+            color: white;\
+            margin-bottom: 5px;\
+        \}\
+\
+        .week-num \{ font-size: 32px; font-weight: bold; \}\
+        .week-title \{ font-size: 18px; \}\
+        .phase-badge \{\
+            background: rgba(0,0,0,0.3);\
+            padding: 4px 12px;\
+            border-radius: 20px;\
+            font-size: 11px;\
+            letter-spacing: 1px;\
+        \}\
+\
+        .progress-container \{\
+            width: 100%;\
+            height: 8px;\
+            background: #e0e0e0;\
+            margin-bottom: 20px;\
+        \}\
+\
+        .progress-bar \{ height: 100%; background: var(--primary); \}\
+\
+        /* --- CARDS --- */\
+        .card \{\
+            background: white;\
+            border-radius: 10px;\
+            box-shadow: 0 1px 4px rgba(0,0,0,0.08);\
+            margin-bottom: 15px;\
+            padding: 14px 16px;\
+            page-break-inside: avoid;\
+            border-left: 4px solid;\
+        \}\
+\
+        .card-header \{\
+            display: flex;\
+            justify-content: space-between;\
+            align-items: center;\
+            margin-bottom: 10px;\
+        \}\
+\
+        .day-id \{ color: var(--primary); font-weight: bold; font-size: 14px; \}\
+        .day-focus \{ font-weight: 600; font-size: 14px; \}\
+        .day-tag \{ font-size: 10px; color: var(--text-sec); text-transform: uppercase; \}\
+\
+        .time-bar \{\
+            display: flex;\
+            height: 12px;\
+            border-radius: 6px;\
+            overflow: hidden;\
+            margin-bottom: 12px;\
+        \}\
+\
+        .segment \{ height: 100%; position: relative; font-size: 8px; color: white; text-align: center; line-height: 12px; \}\
+\
+        .task-list \{ margin: 0; padding-left: 18px; font-size: 13px; \}\
+        .task-list li \{ margin-bottom: 4px; \}\
+        code \{ background: var(--phase2); padding: 1px 4px; border-radius: 3px; font-size: 12px; \}\
+\
+        .anki-pill \{\
+            display: inline-block;\
+            background: #f0f0f0;\
+            padding: 3px 8px;\
+            border-radius: 12px;\
+            font-size: 10px;\
+            margin-top: 10px;\
+        \}\
+\
+        .tip-box \{\
+            margin-top: 10px;\
+            padding-left: 10px;\
+            border-left: 2px solid var(--gold);\
+            font-style: italic;\
+            font-size: 12px;\
+            color: var(--text-sec);\
+        \}\
+\
+        /* Weekend Specials */\
+        .sat-card \{ background: var(--weekend-bg); border-left-color: var(--weekend-border); \}\
+        .sun-card \{ background: var(--weekend-bg); border-left-color: var(--weekend-border); \}\
+        .mock-card \{ background: #FDEDEC; border-left: 6px solid var(--primary); \}\
+        .recovery-card \{ background: var(--rest-bg); border-left-color: var(--rest-border); \}\
+\
+        .hour-block \{\
+            border-top: 1px solid rgba(0,0,0,0.05);\
+            padding: 8px 0;\
+        \}\
+        .hour-title \{ font-weight: 600; font-size: 12px; display: flex; justify-content: space-between; \}\
+\
+        /* FOOTER */\
+        footer \{\
+            position: fixed;\
+            bottom: 10mm;\
+            left: 18mm;\
+            right: 18mm;\
+            border-top: 1px solid var(--gold);\
+            padding-top: 5px;\
+            display: flex;\
+            justify-content: space-between;\
+            font-size: 9px;\
+            color: #9b9088;\
+        \}\
+    </style>\
+</head>\
+<body>\
+\
+    <div class="cover-page">\
+        <div class="cover-kanji jp-font">
+\f1 \'d1\'a7
+\f0 </div>\
+        <div class="cover-title">JLPT N4 MASTER PLAN</div>\
+        <div class="cover-subtitle">75-Day Intensive Study Program</div>\
+        <div class="gold-rule"></div>\
+        <div class="resource-list">\
+            
+\f2 \uc0\u55357 \u56534 
+\f0  <strong>Learning Japanese Made Simple</strong> \'97 Dan Akiyama (N5 Rebuild)<br>\
+            
+\f2 \uc0\u55357 \u56535 
+\f0  <strong>JLPT N4 Set of 4 Booklets</strong> \'97 Goyal Publishers (Primary N4)<br>\
+            
+\f2 \uc0\u55357 \u56536 
+\f0  <strong>Genki Part 1</strong> (Grammar Reference)<br>\
+            
+\f2 \uc0\u55356 \u56527 
+\f0  <strong>Anki SRS</strong> (Daily Vocabulary Engine)\
+        </div>\
+        <div class="student-footer mono">Aryan \'95 2025</div>\
+    </div>\
+\
+    <div class="overview-page container">\
+        <h2 class="section-title">How This Plan Works</h2>\
+        <div class="phase-grid">\
+            <div class="phase-box" style="background: var(--phase1); border-color: var(--phase1-border);">\
+                <h3>Phase 1: N5 Rebuild</h3>\
+                <p class="mono">Days 1\'9621</p>\
+                <p><strong>Resource:</strong> Dan Akiyama<br>Reconstruct the foundation. 103 Kanji + N5 grammar overhaul.</p>\
+            </div>\
+            <div class="phase-box" style="background: var(--phase2); border-color: var(--phase2-border);">\
+                <h3>Phase 2: Core N4 Training</h3>\
+                <p class="mono">Days 22\'9656</p>\
+                <p><strong>Resource:</strong> Goyal N4 Set<br>Deep dive into 168 new Kanji and 83 grammar patterns.</p>\
+            </div>\
+            <div class="phase-box" style="background: var(--phase3); border-color: var(--phase3-border);">\
+                <h3>Phase 3: Consolidation</h3>\
+                <p class="mono">Days 57\'9670</p>\
+                <p><strong>Resource:</strong> Mock Exams<br>Zero new content. Drilling weaknesses and timing sessions.</p>\
+            </div>\
+            <div class="phase-box" style="background: var(--phase4); border-color: var(--phase4-border);">\
+                <h3>Phase 4: Final Sprint</h3>\
+                <p class="mono">Days 71\'9675</p>\
+                <p><strong>Resource:</strong> Summary Sheets<br>Physical and mental recovery + maintenance reviews.</p>\
+            </div>\
+        </div>\
+\
+        <h3 class="jp-font" style="font-size: 16px; margin-bottom: 5px;">Weekly Rhythm</h3>\
+        <div class="rhythm-row">\
+            <div class="day-box">MON<br>1.5h</div>\
+            <div class="day-box">TUE<br>1.5h</div>\
+            <div class="day-box">WED<br>1.5h</div>\
+            <div class="day-box">THU<br>1.5h</div>\
+            <div class="day-box">FRI<br>1.5h</div>\
+            <div class="day-box weekend">SAT<br>5h</div>\
+            <div class="day-box weekend">SUN<br>5h</div>\
+        </div>\
+\
+        <h3 class="jp-font" style="font-size: 16px; margin-top: 30px;">Mock Exam Schedule</h3>\
+        <div class="timeline">\
+            <div class="marker" style="left: 48%;" data-label="Day 36: #1"></div>\
+            <div class="marker" style="left: 76%;" data-label="Day 57: #2"></div>\
+            <div class="marker" style="left: 93%;" data-label="Day 70: #3"></div>\
+        </div>\
+\
+        <h3 class="jp-font" style="font-size: 16px; margin-top: 50px;">Grammar Checklist (Targets)</h3>\
+        <div class="grammar-grid">\
+            <div class="check-item"><input type="checkbox"> 
+\f1 \'a1\'ab
+\f3 \'82\'c4\'82\'b5\'82\'dc\'82\'a4
+\f0 </div>\
+            <div class="check-item"><input type="checkbox"> 
+\f1 \'a1\'ab
+\f3 \'82\'e6\'82\'a4\'82\'c9\'82\'c8\'82\'e9
+\f0 </div>\
+            <div class="check-item"><input type="checkbox"> 
+\f1 \'a1\'ab
+\f3 \'82\'bd\'82\'df\'82\'c9
+\f0 </div>\
+            <div class="check-item"><input type="checkbox"> 
+\f1 \'a1\'ab
+\f3 \'82\'c8\'82\'aa\'82\'e7
+\f0 </div>\
+            <div class="check-item"><input type="checkbox"> 
+\f1 \'a1\'ab
+\f3 \'82\'e7\'82\'b5\'82\'a2
+\f0 </div>\
+            <div class="check-item"><input type="checkbox"> 
+\f1 \'a1\'ab
+\f3 \'82\'cd\'82\'b8\'82\'be
+\f0 </div>\
+            <div class="check-item"><input type="checkbox"> 
+\f1 \'a1\'ab
+\f3 \'82\'a9\'82\'e0\'82\'b5\'82\'ea\'82\'c8\'82\'a2
+\f0 </div>\
+            <div class="check-item"><input type="checkbox"> 
+\f1 \'a1\'ab
+\f3 \'82\'cc\'82\'c9
+\f0 </div>\
+            <div class="check-item"><input type="checkbox"> 
+\f1 \'a1\'ab
+\f3 \'82\'ce
+\f0  cond.</div>\
+            <div class="check-item"><input type="checkbox"> 
+\f1 \'a1\'ab
+\f3 \'82\'bd\'82\'e7
+\f0  cond.</div>\
+            <div class="check-item"><input type="checkbox"> passive 
+\f1 \'a1\'ab
+\f3 \'82\'e7\'82\'ea\'82\'e9
+\f0 </div>\
+            <div class="check-item"><input type="checkbox"> causative 
+\f1 \'a1\'ab
+\f3 \'82\'b3\'82\'b9\'82\'e9
+\f0 </div>\
+            <div class="check-item"><input type="checkbox"> caus-pass 
+\f1 \'a1\'ab
+\f3 \'82\'b3\'82\'b9\'82\'e7\'82\'ea\'82\'e9
+\f0 </div>\
+            <div class="check-item"><input type="checkbox"> 
+\f1 \'a1\'ab
+\f3 \'82\'c4\'82\'a0\'82\'b0\'82\'e9
+\f0 /
+\f3 \'82\'e0\'82\'e7\'82\'a4
+\f0 /
+\f3 \'82\'ad\'82\'ea\'82\'e9
+\f0 </div>\
+            <div class="check-item"><input type="checkbox"> 
+\f1 \'a1\'ab
+\f3 \'82\'bd\'82\'b1\'82\'c6\'82\'aa\'82\'a0\'82\'e9
+\f0 </div>\
+            <div class="check-item"><input type="checkbox"> 
+\f1 \'a1\'ab
+\f3 \'82\'c4\'82\'a2\'82\'ad
+\f0 /
+\f3 \'82\'ad\'82\'e9
+\f0 </div>\
+            <div class="check-item"><input type="checkbox"> 
+\f1 \'a1\'ab
+\f3 \'82\'be\'82\'af
+\f0 /
+\f3 \'82\'b5\'82\'a9\'81\'60\'82\'c8\'82\'a2
+\f0 </div>\
+            <div class="check-item"><input type="checkbox"> 
+\f1 \'a1\'ab\'c7\'b0
+\f3 \'82\'c9
+\f0 /
+\f1 \'e1\'e1
+\f3 \'82\'c5
+\f0 </div>\
+            <div class="check-item"><input type="checkbox"> 
+\f1 \'a1\'ab
+\f3 \'82\'e2\'82\'b7\'82\'a2
+\f0 /
+\f3 \'82\'c9\'82\'ad\'82\'a2
+\f0 </div>\
+            <div class="check-item"><input type="checkbox"> 
+\f1 \'a1\'ab
+\f3 \'82\'b7\'82\'ac\'82\'e9
+\f0 </div>\
+        </div>\
+    </div>\
+\
+    <div class="week-block container">\
+        <div class="week-header" style="background: var(--phase1-border);">\
+            <div class="week-num mono">Week 1</div>\
+            <div class="week-title jp-font">N5 Foundation \'97 Kana & Basics</div>\
+            <div class="phase-badge">
+\f4 \uc0\u9961 
+\f0  FOUNDATION</div>\
+        </div>\
+        <div class="progress-container"><div class="progress-bar" style="width: 1.3%;"></div></div>\
+\
+        <div class="card" style="border-color: var(--phase1-border);">\
+            <div class="card-header">\
+                <span class="day-id mono">DAY 01</span>\
+                <span class="day-focus">System Setup & Hiragana Audit</span>\
+                <span class="day-tag">MON</span>\
+            </div>\
+            <div class="time-bar">\
+                <div class="segment" style="width: 30%; background: var(--primary);">Set 20m</div>\
+                <div class="segment" style="width: 40%; background: var(--secondary);">Gram 40m</div>\
+                <div class="segment" style="width: 30%; background: var(--text-sec);">Kana 30m</div>\
+            </div>\
+            <ul class="task-list">\
+                <li><strong>Anki:</strong> Create "N4 Master" deck. Import N5 Kanji/Vocab list.</li>\
+                <li><strong>Dan Akiyama:</strong> Complete Ch. 1 (Hiragana Review & Basic Particles).</li>\
+                <li><strong>Reference:</strong> Review <code>
+\f3 \'82\'cd
+\f0 </code> vs <code>
+\f3 \'82\'aa
+\f0 </code> basics.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 10 new \'b7 0 review</div>\
+            <div class="tip-box">
+\f2 \uc0\u55357 \u56481 
+\f0  Tip: Don't just read; write every kana stroke by stroke.</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase1-border);">\
+            <div class="card-header">\
+                <span class="day-id mono">DAY 02</span>\
+                <span class="day-focus">Katakana Polish & N5 Kanji 1-10</span>\
+                <span class="day-tag">TUE</span>\
+            </div>\
+            <ul class="task-list">\
+                <li><strong>Dan Akiyama:</strong> Ch. 2 (Katakana & Essential Greetings).</li>\
+                <li><strong>Kanji:</strong> First 10 N5 Kanji (Numbers/Days).</li>\
+                <li><strong>Anki:</strong> Log 10 new vocab from Akiyama Ch. 1.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 10 new \'b7 10 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase1-border);">\
+            <div class="card-header">\
+                <span class="day-id mono">DAY 03</span>\
+                <span class="day-focus">Desu/Masu Form Rebuild</span>\
+                <span class="day-tag">WED</span>\
+            </div>\
+            <ul class="task-list">\
+                <li><strong>Dan Akiyama:</strong> Ch. 3 (Polite Form <code>
+\f1 \'a1\'ab
+\f3 \'82\'dc\'82\'b7
+\f0 </code>).</li>\
+                <li><strong>Kanji:</strong> N5 Kanji 11-20 (Basic Nouns).</li>\
+                <li><strong>Grammar:</strong> Practice <code>
+\f3 \'82\'c5\'82\'b7
+\f0 /
+\f3 \'82\'c5\'82\'cd\'82\'a0\'82\'e8\'82\'dc\'82\'b9\'82\'f1
+\f0 </code>.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 10 new \'b7 20 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase1-border);">\
+            <div class="card-header">\
+                <span class="day-id mono">DAY 04</span>\
+                <span class="day-focus">Existence Verbs & Adjectives</span>\
+                <span class="day-tag">THU</span>\
+            </div>\
+            <ul class="task-list">\
+                <li><strong>Dan Akiyama:</strong> Ch. 4 (<code>
+\f3 \'82\'a0\'82\'e8\'82\'dc\'82\'b7
+\f0 /
+\f3 \'82\'a2\'82\'dc\'82\'b7
+\f0 </code>).</li>\
+                <li><strong>Kanji:</strong> N5 Kanji 21-30.</li>\
+                <li><strong>Genki Ref:</strong> Ch. 4 Adjective conjugation table.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 10 new \'b7 30 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase1-border);">\
+            <div class="card-header">\
+                <span class="day-id mono">DAY 05</span>\
+                <span class="day-focus">Past Tense Foundations</span>\
+                <span class="day-tag">FRI</span>\
+            </div>\
+            <ul class="task-list">\
+                <li><strong>Dan Akiyama:</strong> Ch. 5 (Past Tense Polite).</li>\
+                <li><strong>Kanji:</strong> N5 Kanji 31-40.</li>\
+                <li><strong>Anki:</strong> Clean up any leech cards.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 10 new \'b7 40 review</div>\
+        </div>\
+\
+        <div class="card sat-card">\
+            <div class="card-header">\
+                <span class="day-id mono" style="color:var(--weekend-border)">DAY 06</span>\
+                <span class="day-focus">SATURDAY \'97 5 HR DEEP DIVE</span>\
+                <span class="day-tag">SAT</span>\
+            </div>\
+            <div class="hour-block">\
+                <div class="hour-title"><span>Hour 1 \'97 Anki Power Session</span><span class="mono">0:00-1:00</span></div>\
+                <p>Complete all reviews + 30 new cards from Dan Akiyama vocabulary.</p>\
+            </div>\
+            <div class="hour-block">\
+                <div class="hour-title"><span>Hour 2 \'97 Grammar Deep Dive</span><span class="mono">1:00-2:00</span></div>\
+                <p>Review N5 Sentence patterns: <code>A
+\f3 \'82\'cd
+\f0 B
+\f3 \'82\'c5\'82\'b7
+\f0 </code>, <code>A
+\f3 \'82\'cd
+\f0 B
+\f3 \'82\'c9\'82\'a0\'82\'e8\'82\'dc\'82\'b7
+\f0 </code>.</p>\
+            </div>\
+            <div class="hour-block">\
+                <div class="hour-title"><span>Hour 3 \'97 Kanji Intensive</span><span class="mono">2:00-3:00</span></div>\
+                <p>Physical writing practice of Kanji 1-40. Focus on radicals.</p>\
+            </div>\
+            <div class="hour-block">\
+                <div class="hour-title"><span>Hour 4 \'97 Listening Foundation</span><span class="mono">3:00-4:00</span></div>\
+                <p>Shadowing audio from Akiyama Ch. 1-5. Repeat until 100% comprehension.</p>\
+            </div>\
+            <div class="hour-block">\
+                <div class="hour-title"><span>Hour 5 \'97 Free Immersion</span><span class="mono">4:00-5:00</span></div>\
+                <p>Watch "Shirokuma Cafe" Episode 1 with Japanese subs. Log 5 new words.</p>\
+            </div>\
+        </div>\
+\
+        <div class="card sun-card">\
+            <div class="card-header">\
+                <span class="day-id mono" style="color:var(--weekend-border)">DAY 07</span>\
+                <span class="day-focus">SUNDAY \'97 5 HR IMMERSION</span>\
+                <span class="day-tag">SUN</span>\
+            </div>\
+            <div class="hour-block">\
+                <div class="hour-title"><span>Hour 1-2: Review & Synthesis</span></div>\
+                <p>Re-read Dan Akiyama Chapters 1-5. Highlight difficult sections.</p>\
+            </div>\
+            <div class="hour-block">\
+                <div class="hour-title"><span>Hour 3-4: Creative Writing</span></div>\
+                <p>Write 20 simple sentences using current grammar/kanji.</p>\
+            </div>\
+            <div class="hour-block">\
+                <div class="hour-title"><span>Hour 5: Media Exploration</span></div>\
+                <p>Analyze lyrics of one simple Japanese children's song (e.g., Kira Kira Boshi).</p>\
+            </div>\
+        </div>\
+    </div>\
+\
+    <div class="week-block container">\
+        <div class="week-header" style="background: var(--phase1-border);">\
+            <div class="week-num mono">Week 2</div>\
+            <div class="week-title jp-font">Verb Conjugation & Te-Form</div>\
+            <div class="phase-badge">
+\f4 \uc0\u9961 
+\f0  FOUNDATION</div>\
+        </div>\
+        <div class="progress-container"><div class="progress-bar" style="width: 10.6%;"></div></div>\
+\
+        <div class="card" style="border-color: var(--phase1-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 08</span><span class="day-focus">Te-Form Mechanics</span><span class="day-tag">MON</span></div>\
+            <ul class="task-list">\
+                <li><strong>Dan Akiyama:</strong> Ch. 6 (Te-form grouping).</li>\
+                <li><strong>Kanji:</strong> N5 Kanji 41-50.</li>\
+                <li><strong>Anki:</strong> Add 10 new verbs in dictionary form.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 10 new \'b7 60 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase1-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 09</span><span class="day-focus">Present Progressive</span><span class="day-tag">TUE</span></div>\
+            <ul class="task-list">\
+                <li><strong>Dan Akiyama:</strong> Ch. 7 (<code>
+\f1 \'a1\'ab
+\f3 \'82\'c4\'82\'a2\'82\'e9
+\f0 </code>).</li>\
+                <li><strong>Kanji:</strong> N5 Kanji 51-60.</li>\
+                <li><strong>Exercise:</strong> Conjugate 20 verbs into Te-form.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 10 new \'b7 70 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase1-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 10</span><span class="day-focus">Permission & Prohibition</span><span class="day-tag">WED</span></div>\
+            <ul class="task-list">\
+                <li><strong>Dan Akiyama:</strong> Ch. 8 (<code>
+\f1 \'a1\'ab
+\f3 \'82\'c4\'82\'e0\'82\'a2\'82\'a2
+\f0  / 
+\f1 \'a1\'ab
+\f3 \'82\'c4\'82\'cd\'82\'a2\'82\'af\'82\'c8\'82\'a2
+\f0 </code>).</li>\
+                <li><strong>Kanji:</strong> N5 Kanji 61-70.</li>\
+                <li><strong>Anki:</strong> Vocabulary from Akiyama Ch. 7.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 10 new \'b7 80 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase1-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 11</span><span class="day-focus">Short Form Intro</span><span class="day-tag">THU</span></div>\
+            <ul class="task-list">\
+                <li><strong>Dan Akiyama:</strong> Ch. 9 (Informal Present).</li>\
+                <li><strong>Kanji:</strong> N5 Kanji 71-80.</li>\
+                <li><strong>Genki Ref:</strong> Review "Short Form" rules in Genki Ch. 8.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 10 new \'b7 90 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase1-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 12</span><span class="day-focus">N5 Particles Deep Dive</span><span class="day-tag">FRI</span></div>\
+            <ul class="task-list">\
+                <li><strong>Dan Akiyama:</strong> Ch. 10 (<code>
+\f3 \'82\'c9
+\f0 /
+\f3 \'82\'d6
+\f0 /
+\f3 \'82\'c5
+\f0 /
+\f3 \'82\'a9\'82\'e7
+\f0 /
+\f3 \'82\'dc\'82\'c5
+\f0 </code>).</li>\
+                <li><strong>Kanji:</strong> N5 Kanji 81-90.</li>\
+                <li><strong>Anki:</strong> Particles review sub-deck.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 10 new \'b7 100 review</div>\
+        </div>\
+\
+        <div class="card sat-card">\
+            <div class="card-header">\
+                <span class="day-id mono" style="color:var(--weekend-border)">DAY 13</span>\
+                <span class="day-focus">SATURDAY \'97 VERB DRILL DAY</span>\
+                <span class="day-tag">SAT</span>\
+            </div>\
+            <div class="hour-block">\
+                <div class="hour-title"><span>Hour 1-2: Conjugation Marathon</span></div>\
+                <p>Take 50 N5 verbs. Write them in Polite, Te-form, and Short form. Check against Genki charts.</p>\
+            </div>\
+            <div class="hour-block">\
+                <div class="hour-title"><span>Hour 3: Kanji 41-90 Physical Writing</span></div>\
+                <p>Practice stroke order. Focus on compounds like <code>
+\f1 \'9a\'b0\'c8\'d5
+\f0 </code>, <code>
+\f1 \'cf\'c8\'c9\'fa
+\f0 </code>.</p>\
+            </div>\
+            <div class="hour-block">\
+                <div class="hour-title"><span>Hour 4-5: Audio Immersion</span></div>\
+                <p>Akiyama Audio Ch 6-10. Listen without text, then shadow with text.</p>\
+            </div>\
+        </div>\
+\
+        <div class="card sun-card">\
+            <div class="card-header">\
+                <span class="day-id mono" style="color:var(--weekend-border)">DAY 14</span>\
+                <span class="day-focus">SUNDAY \'97 SENTENCE BUILDING</span>\
+                <span class="day-tag">SUN</span>\
+            </div>\
+            <div class="hour-block">\
+                <div class="hour-title"><span>Hour 1-3: Diary Writing</span></div>\
+                <p>Write a 15-sentence paragraph about your daily routine using <code>Te-form</code> sequence.</p>\
+            </div>\
+            <div class="hour-block">\
+                <div class="hour-title"><span>Hour 4-5: Reading Practice</span></div>\
+                <p>Read "Watanuki no Kanji" (free online N5 level) or simple manga like <i>Yotsubato!</i></p>\
+            </div>\
+        </div>\
+    </div>\
+\
+    <div class="week-block container">\
+        <div class="week-header" style="background: var(--phase1-border);">\
+            <div class="week-num mono">Week 3</div>\
+            <div class="week-title jp-font">Completing the Foundation</div>\
+            <div class="phase-badge">
+\f4 \uc0\u9961 
+\f0  FOUNDATION</div>\
+        </div>\
+        <div class="progress-container"><div class="progress-bar" style="width: 20%;"></div></div>\
+\
+        <div class="card" style="border-color: var(--phase1-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 15</span><span class="day-focus">N4 Vocab Onset & Potential</span><span class="day-tag">MON</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet A:</strong> Page 1-5 (N4 Vocab 1-20).</li>\
+                <li><strong>Dan Akiyama:</strong> Ch. 11 (Potential Form).</li>\
+                <li><strong>Kanji:</strong> N5 Kanji 91-103 (End of N5).</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 120 review</div>\
+            <div class="tip-box">
+\f2 \uc0\u55357 \u56481 
+\f0  Tip: You are now transitioning to N4 content. Keep the N5 basics sharp!</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase1-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 16</span><span class="day-focus">Comparative & Superlative</span><span class="day-tag">TUE</span></div>\
+            <ul class="task-list">\
+                <li><strong>Dan Akiyama:</strong> Ch. 12 (<code>
+\f3 \'82\'d9\'82\'a4\'82\'aa\'82\'a2\'82\'a2
+\f0  / 
+\f3 \'82\'a2\'82\'bf\'82\'ce\'82\'f1
+\f0 </code>).</li>\
+                <li><strong>Goyal Booklet A:</strong> Page 6-10.</li>\
+                <li><strong>Anki:</strong> 10 new N4 words.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 130 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase1-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 17</span><span class="day-focus">Quotations & Thoughts</span><span class="day-tag">WED</span></div>\
+            <ul class="task-list">\
+                <li><strong>Dan Akiyama:</strong> Ch. 13 (<code>
+\f1 \'a1\'ab
+\f3 \'82\'c6\'8e\'76\'82\'a4
+\f0  / 
+\f1 \'a1\'ab
+\f3 \'82\'c6\'8c\'be\'82\'a4
+\f0 </code>).</li>\
+                <li><strong>Goyal Booklet A:</strong> Page 11-15.</li>\
+                <li><strong>Writing:</strong> Write 5 things you think about Japan.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 140 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase1-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 18</span><span class="day-focus">Modifying Nouns with Phrases</span><span class="day-tag">THU</span></div>\
+            <ul class="task-list">\
+                <li><strong>Dan Akiyama:</strong> Ch. 14 (Relative Clauses).</li>\
+                <li><strong>Goyal Booklet A:</strong> Page 16-20.</li>\
+                <li><strong>Genki Ref:</strong> Ch 9 Grammar (Noun qualifiers).</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 150 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase1-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 19</span><span class="day-focus">End of Akiyama Grammar</span><span class="day-tag">FRI</span></div>\
+            <ul class="task-list">\
+                <li><strong>Dan Akiyama:</strong> Final Ch. 15 (Polite vs Informal Wrap-up).</li>\
+                <li><strong>Goyal Booklet A:</strong> Page 21-25.</li>\
+                <li><strong>Checklist:</strong> Tick off all N5 grammar concepts.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 160 review</div>\
+        </div>\
+\
+        <div class="card sat-card">\
+            <div class="card-header">\
+                <span class="day-id mono" style="color:var(--weekend-border)">DAY 20</span>\
+                <span class="day-focus">SATURDAY \'97 THE N5 EXIT</span>\
+                <span class="day-tag">SAT</span>\
+            </div>\
+            <div class="hour-block">\
+                <div class="hour-title"><span>Hour 1-2: N5 Mock (Reading/Grammar)</span></div>\
+                <p>Use any N5 past paper. Ensure you score >90%. If not, identify the chapter to re-read.</p>\
+            </div>\
+            <div class="hour-block">\
+                <div class="hour-title"><span>Hour 3: N4 Kanji Prep</span></div>\
+                <p>Review Goyal Booklet C: Intro to N4 Kanji lists. Study the first 10 N4 Kanji.</p>\
+            </div>\
+            <div class="hour-block">\
+                <div class="hour-title"><span>Hour 4-5: Immersion</span></div>\
+                <p>Listen to "Nihongo con Teppei" (Beginner) Podcast episodes 1-5.</p>\
+            </div>\
+        </div>\
+\
+        <div class="card sun-card">\
+            <div class="card-header">\
+                <span class="day-id mono" style="color:var(--weekend-border)">DAY 21</span>\
+                <span class="day-focus">SUNDAY \'97 RESOURCE TRANSITION</span>\
+                <span class="day-tag">SUN</span>\
+            </div>\
+            <div class="hour-block">\
+                <p>Organize Goyal Booklets B (Grammar) and C (Kanji). Set up physical dividers for Weeks 4-8.</p>\
+                <p>Pre-read Booklet B: Intro to N4 Sentence Structures.</p>\
+            </div>\
+        </div>\
+    </div>\
+\
+    <div class="week-block container">\
+        <div class="week-header" style="background: var(--phase2-border);">\
+            <div class="week-num mono">Week 4</div>\
+            <div class="week-title jp-font">Core N4: Volitional & Experience</div>\
+            <div class="phase-badge">
+\f4 \uc0\u9961 
+\f0  N4 TRAINING</div>\
+        </div>\
+        <div class="progress-container"><div class="progress-bar" style="width: 29.3%;"></div></div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 22</span><span class="day-focus">Volitional Form & Trying</span><span class="day-tag">MON</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab
+\f3 \'82\'e6\'82\'a4\'82\'c6\'8e\'76\'82\'a4
+\f0 </code> / <code>
+\f1 \'a1\'ab
+\f3 \'82\'c4\'82\'dd\'82\'e9
+\f0 </code>.</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 104-107 (N4 Set 1).</li>\
+                <li><strong>Anki:</strong> 10 new N4 words.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 180 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 23</span><span class="day-focus">Experience & Sequential Action</span><span class="day-tag">TUE</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab
+\f3 \'82\'bd\'82\'b1\'82\'c6\'82\'aa\'82\'a0\'82\'e9
+\f0 </code> / <code>
+\f1 \'a1\'ab
+\f3 \'82\'bd\'82\'e8\'81\'60\'82\'bd\'82\'e8
+\f0 </code>.</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 108-111.</li>\
+                <li><strong>Listening:</strong> Goyal Booklet D Track 1.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 190 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 24</span><span class="day-focus">Explanations with ~Ndesu</span><span class="day-tag">WED</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab
+\f3 \'82\'f1\'82\'c5\'82\'b7
+\f0  / 
+\f1 \'a1\'ab
+\f3 \'82\'f1\'82\'be
+\f0 </code>.</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 112-115.</li>\
+                <li><strong>Anki:</strong> Focus on N4 Adj-nouns.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 200 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 25</span><span class="day-focus">Giving & Receiving (Part 1)</span><span class="day-tag">THU</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f3 \'82\'a0\'82\'b0\'82\'e9
+\f0  / 
+\f3 \'82\'ad\'82\'ea\'82\'e9
+\f0  / 
+\f3 \'82\'e0\'82\'e7\'82\'a4
+\f0 </code> (Items).</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 116-119.</li>\
+                <li><strong>Genki Ref:</strong> Ch 14 Giving/Receiving.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 210 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 26</span><span class="day-focus">Too Much & Ease/Difficulty</span><span class="day-tag">FRI</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab
+\f3 \'82\'b7\'82\'ac\'82\'e9
+\f0 </code> / <code>
+\f1 \'a1\'ab
+\f3 \'82\'e2\'82\'b7\'82\'a2
+\f0  / 
+\f1 \'a1\'ab
+\f3 \'82\'c9\'82\'ad\'82\'a2
+\f0 </code>.</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 120-123.</li>\
+                <li><strong>Anki:</strong> 15 new N4 verbs.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 220 review</div>\
+        </div>\
+\
+        <div class="card sat-card">\
+            <div class="card-header">\
+                <span class="day-id mono">DAY 27</span>\
+                <span class="day-focus">SATURDAY \'97 DEEP N4 DIVE</span>\
+                <span class="day-tag">SAT</span>\
+            </div>\
+            <div class="hour-block">\
+                <div class="hour-title"><span>Hour 1-2: Grammar Synthesis</span></div>\
+                <p>Create a physical mind map of Giving/Receiving. Who is the subject? Who is the giver?</p>\
+            </div>\
+            <div class="hour-block">\
+                <div class="hour-title"><span>Hour 3: Kanji 104-123 Drill</span></div>\
+                <p>Write each Kanji in 3 different compounds found in Goyal Booklet A.</p>\
+            </div>\
+            <div class="hour-block">\
+                <div class="hour-title"><span>Hour 4-5: Listening Simulation</span></div>\
+                <p>Goyal Booklet D: Section 1 (Short dialogues). Analyze why you missed any answers.</p>\
+            </div>\
+        </div>\
+\
+        <div class="card sun-card">\
+            <div class="card-header">\
+                <span class="day-id mono">DAY 28</span>\
+                <span class="day-focus">SUNDAY \'97 IMMERSION</span>\
+                <span class="day-tag">SUN</span>\
+            </div>\
+            <div class="hour-block"><p>Watch "Japanese with Shun" N4 Level Podcast. Write 10 original sentences using <code>
+\f1 \'a1\'ab
+\f3 \'82\'b7\'82\'ac\'82\'e9
+\f0 </code>.</p></div>\
+        </div>\
+    </div>\
+\
+    <div class="week-block container">\
+        <div class="week-header" style="background: var(--phase2-border);">\
+            <div class="week-num mono">Week 5</div>\
+            <div class="week-title jp-font">Conditionals: Tara & Ba</div>\
+            <div class="phase-badge">
+\f4 \uc0\u9961 
+\f0  N4 TRAINING</div>\
+        </div>\
+        <div class="progress-container"><div class="progress-bar" style="width: 38.6%;"></div></div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 29</span><span class="day-focus">Tara Conditional</span><span class="day-tag">MON</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab
+\f3 \'82\'bd\'82\'e7
+\f0 </code> (Condition & Succession).</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 124-127.</li>\
+                <li><strong>Anki:</strong> 15 new N4 words.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 240 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 30</span><span class="day-focus">Ba Conditional</span><span class="day-tag">TUE</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab
+\f3 \'82\'ce
+\f0 </code> (Formal Condition).</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 128-131.</li>\
+                <li><strong>Drill:</strong> Compare <code>
+\f3 \'82\'bd\'82\'e7
+\f0 </code> vs <code>
+\f3 \'82\'ce
+\f0 </code> in Genki Ch 17.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 250 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 31</span><span class="day-focus">Expectations & Hearsay</span><span class="day-tag">WED</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab
+\f3 \'82\'cd\'82\'b8\'82\'be
+\f0  / 
+\f1 \'a1\'ab
+\f3 \'82\'e7\'82\'b5\'82\'a2
+\f0 </code>.</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 132-135.</li>\
+                <li><strong>Listening:</strong> Goyal Booklet D Track 2.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 260 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 32</span><span class="day-focus">Possibility & Maybe</span><span class="day-tag">THU</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab
+\f3 \'82\'a9\'82\'e0\'82\'b5\'82\'ea\'82\'c8\'82\'a2
+\f0 </code> / <code>
+\f1 \'a1\'ab
+\f3 \'82\'c5\'82\'b5\'82\'e5\'82\'a4
+\f0 </code>.</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 136-139.</li>\
+                <li><strong>Anki:</strong> Focus on Adverbs (<code>
+\f3 \'82\'bd\'82\'d4\'82\'f1
+\f0 , 
+\f3 \'82\'e0\'82\'b5\'82\'a9\'82\'b5\'82\'bd\'82\'e7
+\f0 </code>).</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 270 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 33</span><span class="day-focus">Intentions & Planning</span><span class="day-tag">FRI</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab
+\f3 \'82\'c2\'82\'e0\'82\'e8
+\f0 </code> / <code>
+\f1 \'a1\'ab
+\f3 \'82\'e6\'82\'c4\'82\'a2
+\f0 </code>.</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 140-143.</li>\
+                <li><strong>Writing:</strong> Write your plan for next week in Japanese.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 280 review</div>\
+        </div>\
+\
+        <div class="card sat-card">\
+            <div class="card-header"><span class="day-id mono">DAY 34</span><span class="day-focus">SATURDAY \'97 CONDITIONALS DRILL</span><span class="day-tag">SAT</span></div>\
+            <div class="hour-block"><p>Hour 1-3: Deep dive into all 4 conditionals (<code>
+\f3 \'82\'c6
+\f0 , 
+\f3 \'82\'bd\'82\'e7
+\f0 , 
+\f3 \'82\'ce
+\f0 , 
+\f3 \'82\'c8\'82\'e7
+\f0 </code>). Create a contrast table.</p></div>\
+            <div class="hour-block"><p>Hour 4-5: Review all N4 Kanji learned so far (104-143).</p></div>\
+        </div>\
+\
+        <div class="card sun-card">\
+            <div class="card-header"><span class="day-id mono">DAY 35</span><span class="day-focus">SUNDAY \'97 PRE-MOCK RECOVERY</span><span class="day-tag">SUN</span></div>\
+            <div class="hour-block"><p>Light review of Week 4/5 grammar. Early sleep. Prepare mock paper for tomorrow.</p></div>\
+        </div>\
+    </div>\
+\
+    <div class="week-block container">\
+        <div class="week-header" style="background: var(--phase2-border);">\
+            <div class="week-num mono">Week 6</div>\
+            <div class="week-title jp-font">Checkpoint & Heavy Verbs</div>\
+            <div class="phase-badge">
+\f4 \uc0\u9961 
+\f0  N4 TRAINING</div>\
+        </div>\
+        <div class="progress-container"><div class="progress-bar" style="width: 48%;"></div></div>\
+\
+        <div class="card mock-card">\
+            <div class="card-header">\
+                <span class="day-id mono">DAY 36</span>\
+                <span class="day-focus">
+\f2 \uc0\u55356 \u57263 
+\f0  MOCK EXAM DAY #1</span>\
+                <span class="day-tag">MON</span>\
+            </div>\
+            <ul class="task-list">\
+                <li><strong>Exam:</strong> Sit full timed N4 mock (Sections 1-3). No distractions.</li>\
+                <li><strong>Analysis:</strong> Grade immediately. Tag every mistake by category (Vocab/Grammar/Kanji).</li>\
+                <li><strong>Log:</strong> Record score in back of study journal.</li>\
+            </ul>\
+            <div class="anki-pill">No new cards today. Reviews only.</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 37</span><span class="day-focus">Passive Voice</span><span class="day-tag">TUE</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab
+\f3 \'82\'e7\'82\'ea\'82\'e9
+\f0 </code> (Passive).</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 144-147.</li>\
+                <li><strong>Review:</strong> Analyze Mock 1 Passive mistakes.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 300 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 38</span><span class="day-focus">Causative Form</span><span class="day-tag">WED</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab
+\f3 \'82\'b3\'82\'b9\'82\'e9
+\f0 </code> (Causative).</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 148-151.</li>\
+                <li><strong>Drill:</strong> "Make/Let someone do" sentences.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 310 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 39</span><span class="day-focus">Causative-Passive</span><span class="day-tag">THU</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab
+\f3 \'82\'b3\'82\'b9\'82\'e7\'82\'ea\'82\'e9
+\f0 </code> (Forced to do).</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 152-155.</li>\
+                <li><strong>Genki Ref:</strong> Ch 23 (The "Holy Grail" of complex verbs).</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 320 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 40</span><span class="day-focus">Giving/Receiving Actions</span><span class="day-tag">FRI</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab
+\f3 \'82\'c4\'82\'a0\'82\'b0\'82\'e9
+\f0  / 
+\f1 \'a1\'ab
+\f3 \'82\'c4\'82\'ad\'82\'ea\'82\'e9
+\f0  / 
+\f1 \'a1\'ab
+\f3 \'82\'c4\'82\'e0\'82\'e7\'82\'a4
+\f0 </code>.</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 156-159.</li>\
+                <li><strong>Anki:</strong> 20 new N4 words.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 20 new \'b7 330 review</div>\
+        </div>\
+\
+        <div class="card sat-card">\
+            <div class="card-header"><span class="day-id mono">DAY 41</span><span class="day-focus">SATURDAY \'97 PASSIVE/CAUSATIVE HELL</span><span class="day-tag">SAT</span></div>\
+            <div class="hour-block"><p>Hour 1-3: Convert 30 verbs through the chain: Dict 
+\f5 \uc0\u8594 
+\f0  Passive 
+\f5 \uc0\u8594 
+\f0  Causative 
+\f5 \uc0\u8594 
+\f0  Caus-Passive.</p></div>\
+            <div class="hour-block"><p>Hour 4-5: Goyal Booklet D Track 3-5. Intensive listening.</p></div>\
+        </div>\
+\
+        <div class="card sun-card">\
+            <div class="card-header"><span class="day-id mono">DAY 42</span><span class="day-focus">SUNDAY \'97 READING FOCUS</span><span class="day-tag">SUN</span></div>\
+            <div class="hour-block"><p>Read 3 N4-level articles on "NHK News Web Easy". List and look up unknown Kanji.</p></div>\
+        </div>\
+    </div>\
+\
+    <div class="week-block container">\
+        <div class="week-header" style="background: var(--phase2-border);">\
+            <div class="week-num mono">Week 7</div>\
+            <div class="week-title jp-font">Purpose & Change of State</div>\
+            <div class="phase-badge">
+\f4 \uc0\u9961 
+\f0  N4 TRAINING</div>\
+        </div>\
+        <div class="progress-container"><div class="progress-bar" style="width: 57.3%;"></div></div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 43</span><span class="day-focus">In order to / For</span><span class="day-tag">MON</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab
+\f3 \'82\'bd\'82\'df\'82\'c9
+\f0  / 
+\f1 \'a1\'ab
+\f3 \'82\'e6\'82\'a4\'82\'c9
+\f0 </code>.</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 160-163.</li>\
+                <li><strong>Anki:</strong> 15 new N4 words.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 350 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 44</span><span class="day-focus">Coming & Going Actions</span><span class="day-tag">TUE</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab
+\f3 \'82\'c4\'82\'a2\'82\'ad
+\f0  / 
+\f1 \'a1\'ab
+\f3 \'82\'c4\'82\'ad\'82\'e9
+\f0 </code>.</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 164-167.</li>\
+                <li><strong>Grammar:</strong> Distinction between physical and temporal movement.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 360 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 45</span><span class="day-focus">Becoming & Reaching a Point</span><span class="day-tag">WED</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab
+\f3 \'82\'e6\'82\'a4\'82\'c9\'82\'c8\'82\'e9
+\f0  / 
+\f1 \'a1\'ab
+\f3 \'82\'b1\'82\'c6\'82\'c9\'82\'c8\'82\'e9
+\f0 </code>.</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 168-171.</li>\
+                <li><strong>Anki:</strong> 15 new N4 words.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 370 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 46</span><span class="day-focus">Simultaneous Actions</span><span class="day-tag">THU</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab
+\f3 \'82\'c8\'82\'aa\'82\'e7
+\f0 </code>.</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 172-175.</li>\
+                <li><strong>Kanji:</strong> Focus on Time-related Kanji.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 380 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 47</span><span class="day-focus">Regret & Completion</span><span class="day-tag">FRI</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab
+\f3 \'82\'c4\'82\'b5\'82\'dc\'82\'a4
+\f0 </code>.</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 176-179.</li>\
+                <li><strong>Anki:</strong> N4 set phrases/onomatopoeia.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 390 review</div>\
+        </div>\
+\
+        <div class="card sat-card">\
+            <div class="card-header"><span class="day-id mono">DAY 48</span><span class="day-focus">SATURDAY \'97 PHRASE COMBINATIONS</span><span class="day-tag">SAT</span></div>\
+            <div class="hour-block"><p>Hour 1-3: Combine patterns (e.g., <code>
+\f1 \'a1\'ab
+\f3 \'82\'c4\'82\'b5\'82\'dc\'82\'c1\'82\'bd\'82\'e7
+\f0 </code>). This is where N4 gets tricky.</p></div>\
+            <div class="hour-block"><p>Hour 4-5: Kanji 144-179 Review. Focus on On-yomi vs Kun-yomi.</p></div>\
+        </div>\
+\
+        <div class="card sun-card">\
+            <div class="card-header"><span class="day-id mono">DAY 49</span><span class="day-focus">SUNDAY \'97 LISTENING LAB</span><span class="day-tag">SUN</span></div>\
+            <div class="hour-block"><p>Watch 3 episodes of "Japanese with Miku" N4 Grammar series. Take notes on nuances.</p></div>\
+        </div>\
+    </div>\
+\
+    <div class="week-block container">\
+        <div class="week-header" style="background: var(--phase2-border);">\
+            <div class="week-num mono">Week 8</div>\
+            <div class="week-title jp-font">Completing the N4 Syllabus</div>\
+            <div class="phase-badge">
+\f4 \uc0\u9961 
+\f0  N4 TRAINING</div>\
+        </div>\
+        <div class="progress-container"><div class="progress-bar" style="width: 66.6%;"></div></div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 50</span><span class="day-focus">Despite & Although</span><span class="day-tag">MON</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab
+\f3 \'82\'cc\'82\'c9
+\f0 </code> / <code>
+\f1 \'a1\'ab
+\f3 \'82\'c4\'82\'e0
+\f0 </code>.</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 180-185.</li>\
+                <li><strong>Anki:</strong> 15 new N4 words.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 410 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 51</span><span class="day-focus">Only & Limits</span><span class="day-tag">TUE</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab
+\f3 \'82\'be\'82\'af
+\f0  / 
+\f1 \'a1\'ab
+\f3 \'82\'b5\'82\'a9\'81\'60\'82\'c8\'82\'a2
+\f0 </code>.</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 186-191.</li>\
+                <li><strong>Exercise:</strong> Rewrite sentences from "Only" to "Nothing but".</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 420 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 52</span><span class="day-focus">Respectful Keigo (Intro)</span><span class="day-tag">WED</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab\'d7\'f0\'be\'b4\'d5\'5a
+\f0  (Sonkeigo)</code> basics.</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 192-198.</li>\
+                <li><strong>Anki:</strong> 10 common Keigo verbs.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 430 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 53</span><span class="day-focus">Humble Keigo (Intro)</span><span class="day-tag">THU</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab\'d6\'74\'d7\'6a\'d5\'5a
+\f0  (Kenjougo)</code> basics.</li>\
+                <li><strong>Goyal Booklet C:</strong> Kanji 199-205.</li>\
+                <li><strong>Listening:</strong> Goyal Booklet D Keigo tracks.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 15 new \'b7 440 review</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase2-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 54</span><span class="day-focus">Before & After</span><span class="day-tag">FRI</span></div>\
+            <ul class="task-list">\
+                <li><strong>Goyal Booklet B:</strong> <code>
+\f1 \'a1\'ab\'c7\'b0
+\f3 \'82\'c9
+\f0  / 
+\f1 \'a1\'ab
+\f3 \'82\'bd\'8c\'e3\'82\'c5
+\f0 </code>.</li>\
+                <li><strong>Goyal Booklet C:</strong> Final Kanji set 206-215.</li>\
+                <li><strong>Anki:</strong> Final 10 N4 vocab cards.</li>\
+            </ul>\
+            <div class="anki-pill">
+\f2 \uc0\u55356 \u56527 
+\f0  Anki: 10 new \'b7 450 review</div>\
+        </div>\
+\
+        <div class="card sat-card">\
+            <div class="card-header"><span class="day-id mono">DAY 55</span><span class="day-focus">SATURDAY \'97 N4 SYLLABUS WRAP</span><span class="day-tag">SAT</span></div>\
+            <div class="hour-block"><p>Hour 1-3: Review ALL 215 Kanji. Mark those you keep forgetting.</p></div>\
+            <div class="hour-block"><p>Hour 4-5: Review Booklet B index. Ensure every pattern has a checkmark.</p></div>\
+        </div>\
+\
+        <div class="card sun-card">\
+            <div class="card-header"><span class="day-id mono">DAY 56</span><span class="day-focus">SUNDAY \'97 PRE-MOCK DRILL</span><span class="day-tag">SUN</span></div>\
+            <div class="hour-block"><p>Focus solely on Reading Comprehension. Read 5 long-form N4 passages. No dictionary.</p></div>\
+        </div>\
+    </div>\
+\
+    <div class="week-block container">\
+        <div class="week-header" style="background: var(--phase3-border);">\
+            <div class="week-num mono">Week 9</div>\
+            <div class="week-title jp-font">Consolidation \'97 No New Content</div>\
+            <div class="phase-badge">
+\f4 \uc0\u9961 
+\f0  CONSOLIDATION</div>\
+        </div>\
+        <div class="progress-container"><div class="progress-bar" style="width: 76%;"></div></div>\
+\
+        <div class="card mock-card">\
+            <div class="card-header">\
+                <span class="day-id mono">DAY 57</span>\
+                <span class="day-focus">
+\f2 \uc0\u55356 \u57263 
+\f0  MOCK EXAM DAY #2</span>\
+                <span class="day-tag">MON</span>\
+            </div>\
+            <ul class="task-list">\
+                <li>Timed Exam: Full N4 Paper (Official Sample preferred).</li>\
+                <li>Target: 70% in all sections.</li>\
+                <li>Analyze grammar traps (e.g., <code>
+\f1 \'a1\'ab
+\f3 \'82\'e6\'82\'a4\'82\'c9
+\f0 </code> vs <code>
+\f1 \'a1\'ab
+\f3 \'82\'bd\'82\'df\'82\'c9
+\f0 </code>).</li>\
+            </ul>\
+            <div class="anki-pill">Reviews only. Stop adding new cards.</div>\
+        </div>\
+\
+        <div class="card" style="border-color: var(--phase3-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 58</span><span class="day-focus">Weakness Drill: Particles</span><span class="day-tag">TUE</span></div>\
+            <p>Re-do all Particle exercises in Goyal Booklet B. Focus on <code>
+\f3 \'82\'c5
+\f0 , 
+\f3 \'82\'c9
+\f0 , 
+\f3 \'82\'f0
+\f0 </code>.</p>\
+        </div>\
+        <div class="card" style="border-color: var(--phase3-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 59</span><span class="day-focus">Weakness Drill: Kanji Compounds</span><span class="day-tag">WED</span></div>\
+            <p>Drill Kanji from Booklet C that appeared in Mock 2 but were missed.</p>\
+        </div>\
+        <div class="card" style="border-color: var(--phase3-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 60</span><span class="day-focus">Weakness Drill: Listening</span><span class="day-tag">THU</span></div>\
+            <p>Re-listen to Tracks 1-10 of Booklet D. Script analysis for speed.</p>\
+        </div>\
+        <div class="card" style="border-color: var(--phase3-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 61</span><span class="day-focus">Weakness Drill: Conjugation</span><span class="day-tag">FRI</span></div>\
+            <p>Speed drill: Write 50 verbs in Potential and Passive forms in under 10 minutes.</p>\
+        </div>\
+\
+        <div class="card sat-card">\
+            <div class="card-header"><span class="day-id mono">DAY 62</span><span class="day-focus">SATURDAY \'97 READING STAMINA</span><span class="day-tag">SAT</span></div>\
+            <div class="hour-block"><p>Spend 5 hours reading N4 materials. Build the "mental muscle" to read for 60 mins straight.</p></div>\
+        </div>\
+\
+        <div class="card mock-card">\
+            <div class="card-header"><span class="day-id mono">DAY 63</span><span class="day-focus">
+\f2 \uc0\u55356 \u57263 
+\f0  MOCK EXAM DAY #3</span><span class="day-tag">SUN</span></div>\
+            <p>Final Full Simulation. Treat this as the real exam day. 100% focus.</p>\
+        </div>\
+    </div>\
+\
+    <div class="week-block container">\
+        <div class="week-header" style="background: var(--phase3-border);">\
+            <div class="week-num mono">Week 10</div>\
+            <div class="week-title jp-font">Final Polish & Error Reduction</div>\
+            <div class="phase-badge">
+\f4 \uc0\u9961 
+\f0  CONSOLIDATION</div>\
+        </div>\
+        <div class="progress-container"><div class="progress-bar" style="width: 86.6%;"></div></div>\
+\
+        <div class="card" style="border-color: var(--phase3-border);"><div class="card-header"><span class="day-id mono">DAY 64</span><span class="day-focus">Kanji Reading Speed</span><span class="day-tag">MON</span></div></div>\
+        <div class="card" style="border-color: var(--phase3-border);"><div class="card-header"><span class="day-id mono">DAY 65</span><span class="day-focus">Grammar Choice Logic</span><span class="day-tag">TUE</span></div></div>\
+        <div class="card" style="border-color: var(--phase3-border);"><div class="card-header"><span class="day-id mono">DAY 66</span><span class="day-focus">Listening: Identifying Speakers</span><span class="day-tag">WED</span></div></div>\
+        <div class="card" style="border-color: var(--phase3-border);"><div class="card-header"><span class="day-id mono">DAY 67</span><span class="day-focus">Reading: Finding the Main Point</span><span class="day-tag">THU</span></div></div>\
+        <div class="card" style="border-color: var(--phase3-border);"><div class="card-header"><span class="day-id mono">DAY 68</span><span class="day-focus">Vocabulary Context Drill</span><span class="day-tag">FRI</span></div></div>\
+\
+        <div class="card sat-card">\
+            <div class="card-header"><span class="day-id mono">DAY 69</span><span class="day-focus">SATURDAY \'97 ERROR ANALYSIS</span><span class="day-tag">SAT</span></div>\
+            <p>Go through ALL three mocks. Re-solve every single problem you got wrong.</p>\
+        </div>\
+\
+        <div class="card mock-card">\
+            <div class="card-header"><span class="day-id mono">DAY 70</span><span class="day-focus">
+\f2 \uc0\u55356 \u57263 
+\f0  FINAL SIMULATION</span><span class="day-tag">SUN</span></div>\
+            <p>Final 5-hour session. Review weak grammar summary sheet + final vocabulary skim.</p>\
+        </div>\
+    </div>\
+\
+    <div class="week-block container">\
+        <div class="week-header" style="background: var(--phase4-border);">\
+            <div class="week-num mono">Sprint</div>\
+            <div class="week-title jp-font">Final Descent \'97 Calm & Sharp</div>\
+            <div class="phase-badge">
+\f2 \uc0\u55356 \u57144 
+\f0  FINAL SPRINT</div>\
+        </div>\
+        <div class="progress-container"><div class="progress-bar" style="width: 100%;"></div></div>\
+\
+        <div class="card" style="border-color: var(--phase4-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 71</span><span class="day-focus">Total Anki Clear</span><span class="day-tag">MON</span></div>\
+            <p>Zero new cards. Clear all reviews. If reviews are low, do light immersion listening.</p>\
+        </div>\
+        <div class="card" style="border-color: var(--phase4-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 72</span><span class="day-focus">Grammar Summary Skim</span><span class="day-tag">TUE</span></div>\
+            <p>Read through your own grammar notes. Don't stress, just recognize the patterns.</p>\
+        </div>\
+        <div class="card" style="border-color: var(--phase4-border);">\
+            <div class="card-header"><span class="day-id mono">DAY 73</span><span class="day-focus">Kanji Recognition Check</span><span class="day-tag">WED</span></div>\
+            <p>Quick skim of Goyal Booklet C. Say the reading for each Kanji aloud.</p>\
+        </div>\
+        <div class="card recovery-card">\
+            <div class="card-header"><span class="day-id mono">DAY 74</span><span class="day-focus">
+\f2 \uc0\u9749 
+\f0  RECOVERY DAY</span><span class="day-tag">THU</span></div>\
+            <p>Max 30 min Anki reviews only. Rest your brain. Pack your bag for the exam.</p>\
+        </div>\
+        <div class="card recovery-card">\
+            <div class="card-header"><span class="day-id mono">DAY 75</span><span class="day-focus">
+\f2 \uc0\u9749 
+\f0  RECOVERY DAY</span><span class="day-tag">FRI</span></div>\
+            <p>Light music in Japanese. 8+ hours of sleep. You are ready, Aryan.</p>\
+        </div>\
+    </div>\
+\
+    <footer>\
+        <div>JLPT N4 \'97 75 Day Plan</div>\
+        <div>Page 1 of 11</div>\
+        <div>
+\f1 \'d1\'a7
+\f3 \'82\'d4\'82\'b1\'82\'c6\'82\'f0\'82\'e2\'82\'df\'82\'bd\'8e\'d2\'82\'cd\'81\'41\'98\'56\'82\'a2\'82\'c4\'82\'a2\'82\'e9
+\f0  (He who stops learning is old)</div>\
+    </footer>\
+\
+</body>\
+</html>}
